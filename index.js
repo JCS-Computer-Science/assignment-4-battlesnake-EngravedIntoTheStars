@@ -17,7 +17,7 @@ app.use(express.json());
 const config = {
 	apiversion: "1",
 	author: "", // TODO: Your Battlesnake Username
-	color: "#f6ff72", // TODO: Choose color
+	color: "#f9ffab", // TODO: Choose color
 	head: "default", // TODO: Choose head, see https://play.battlesnake.com/customizations/ for options unlocked in your account
 	tail: "default", // TODO: Choose tail, see https://play.battlesnake.com/customizations/ for options unlocked in your account
 };
@@ -30,7 +30,7 @@ app.get("/", (req,res) => {
 //      the request body will contain objects representing the game instance, game board state, and your snake
 //      https://docs.battlesnake.com/api/requests/start
 app.post("/start", (req,res) => {
-	handlers.start(req.body);
+	app.start(req.body);
 	res.send("ok");
 });
 //TODO: respond to POST requests on "/move". Your response should be an object with a "move" property and optionally
@@ -44,7 +44,7 @@ app.post("/move", (req,res) => {
 //      but must have status code "200" the request body will contain objects representing the game
 //      https://docs.battlesnake.com/api/requests/end
 app.post("/end", (req,res) => {
-	handlers.end(req.body);
+	app.end(req.body);
 	res.send("ok");
 })
 
