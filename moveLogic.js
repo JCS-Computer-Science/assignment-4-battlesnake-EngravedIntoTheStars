@@ -29,16 +29,7 @@ export default function move(gameState){
     const boardWidth = gameState.board.width;
     const boardHeight = gameState.board.height;
 
-    if (myHead.x < boardWidth){
-        moveSafety.right = true;
-    } else{
-        moveSafety.right = false;
-    }
-    if (myHead.y < boardHeight){
-        moveSafety.up = true;
-    } else {
-        moveSafety.up = false;
-    }
+
     // TODO: Step 2 - Prevent your Battlesnake from colliding with itself
     // gameState.you contains an object representing your snake, including its coordinates
     // https://docs.battlesnake.com/api/objects/battlesnake
