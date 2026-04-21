@@ -28,22 +28,8 @@ export default function move(gameState){
     // https://docs.battlesnake.com/api/objects/board
     const boardWidth = gameState.board.width;
     const boardHeight = gameState.board.height;
-    let originX = boardWidth - boardWidth;
-    let originY = boardHeight - boardHeight;
 
-    if (myHead.x = originX){
-        moveSafety.left = false;
-
-    } else if (myHead.x = boardWidth){
-        moveSafety.right = false;
-
-    } else if (myHead.y = originY){
-        moveSafety.down = false;
-
-    } else if (myHead.y = boardHeight){
-        moveSafety.up = false;
-
-    }
+    
     // TODO: Step 2 - Prevent your Battlesnake from colliding with itself
     // gameState.you contains an object representing your snake, including its coordinates
     // https://docs.battlesnake.com/api/objects/battlesnake
@@ -52,7 +38,8 @@ export default function move(gameState){
     // TODO: Step 3 - Prevent your Battlesnake from colliding with other Battlesnakes
     // gameState.board.snakes contains an array of enemy snake objects, which includes their coordinates
     // https://docs.battlesnake.com/api/objects/battlesnake
-    
+    const opponents = gameState.board.snakes
+
     // Are there any safe moves left?
     
     //Object.keys(moveSafety) returns ["up", "down", "left", "right"]
