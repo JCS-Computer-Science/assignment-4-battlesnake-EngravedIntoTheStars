@@ -6,7 +6,6 @@ export default function move(gameState){
         right: true
     };
     
-    // We've included code to prevent your Battlesnake from moving backwards
     const myHead = gameState.you.body[0];
     const myNeck = gameState.you.body[1];
     const boardWidth = gameState.board.width;
@@ -15,10 +14,21 @@ export default function move(gameState){
     const badThings = gameState.board.hazards;
     const opponents = gameState.board.snakes;
     
+    if (myHead.x = boardWidth){
+        moveSafety.right = false;
+    }
+    if (myHead.y = boardHeight){
+        moveSafety.up = false;
+    }
+    if (myHead.x = 0){
+        moveSafety.left = false;
+    }
+    if (myHead.y = 0){
+        moveSafety.down = false;
+    }
 
 
-
-
+    // We've included code to prevent your Battlesnake from moving backwards
     if (myNeck.x < myHead.x) {        // Neck is left of head, don't move left
         moveSafety.left = false;
         
